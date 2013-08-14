@@ -23,7 +23,7 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
 
     public SkyrailsTransactionMonitor() {
         // creating Skyrails client instance
-        this.skyrails = new SkyrailsClient("localhost", 9999);
+        this.skyrails = new SkyrailsClient(getHost(), getPort());
         try {
             skyrails.connect();
             // creating Neo4j root node
@@ -38,6 +38,26 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Method returns default port for connecting with Skyrails instance. You can change it to any value in your custom
+     * implementation.
+     *
+     * @return
+     */
+    protected int getPort() {
+        return 9999;
+    }
+
+    /**
+     * Method returns default host name for connecting with Skyrails instance. You can change it to any value in your
+     * custom implementation.
+     *
+     * @return
+     */
+    protected String getHost() {
+        return "localhost";
     }
 
     @Override
