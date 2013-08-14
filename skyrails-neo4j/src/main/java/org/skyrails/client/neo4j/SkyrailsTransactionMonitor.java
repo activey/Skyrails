@@ -10,11 +10,9 @@ import org.skyrails.client.operator.BulkOperator;
 import org.skyrails.client.operator.DirectOperator;
 
 /**
- * Created with IntelliJ IDEA.
  * User: activey
  * Date: 30.06.13
  * Time: 18:17
- * To change this template use File | Settings | File Templates.
  */
 public class SkyrailsTransactionMonitor implements TransactionEventHandler {
 
