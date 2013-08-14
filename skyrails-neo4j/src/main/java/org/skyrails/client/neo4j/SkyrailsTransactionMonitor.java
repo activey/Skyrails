@@ -8,6 +8,8 @@ import org.skyrails.client.IServerHandle;
 import org.skyrails.client.SkyrailsClient;
 import org.skyrails.client.operator.BulkOperator;
 import org.skyrails.client.operator.DirectOperator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class is an implementation of {@link org.neo4j.graphdb.event.TransactionEventHandler} that translates all node/edge
@@ -19,6 +21,7 @@ import org.skyrails.client.operator.DirectOperator;
  */
 public class SkyrailsTransactionMonitor implements TransactionEventHandler {
 
+    private final static Logger log = LoggerFactory.getLogger(SkyrailsTransactionMonitor.class);
     private final SkyrailsClient skyrails;
 
     public SkyrailsTransactionMonitor() {
@@ -36,28 +39,8 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("", e);
         }
-    }
-
-    /**
-     * Method returns default port for connecting with Skyrails instance. You can change it to any value in your custom
-     * implementation.
-     *
-     * @return
-     */
-    protected int getPort() {
-        return 9999;
-    }
-
-    /**
-     * Method returns default host name for connecting with Skyrails instance. You can change it to any value in your
-     * custom implementation.
-     *
-     * @return
-     */
-    protected String getHost() {
-        return "localhost";
     }
 
     @Override
@@ -83,7 +66,7 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("", e);
         }
 
         try {
@@ -101,7 +84,7 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
                 }
             });
         } catch (Exception e) {
-            e.printStackTrace();
+           log.error("", e);
         }
 
     }
@@ -114,6 +97,26 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
      */
     protected String getLabelProperty() {
         return "name";
+    }
+
+    /**
+     * Method returns default port for connecting with Skyrails instance. You can change it to any value in your custom
+     * implementation.
+     *
+     * @return
+     */
+    protected int getPort() {
+        return 9999;
+    }
+
+    /**
+     * Method returns default host name for connecting with Skyrails instance. You can change it to any value in your
+     * custom implementation.
+     *
+     * @return
+     */
+    protected String getHost() {
+        return "localhost";
     }
 
     @Override

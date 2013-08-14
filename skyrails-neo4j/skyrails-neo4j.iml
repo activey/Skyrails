@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="module" module-name="skyrails-client" />
     <orderEntry type="library" name="Maven: org.neo4j:neo4j:1.9.RC1" level="project" />
     <orderEntry type="library" name="Maven: org.neo4j:neo4j-kernel:1.9.RC1" level="project" />
