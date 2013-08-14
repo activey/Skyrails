@@ -2,8 +2,6 @@ package org.skyrails.client.handle;
 
 import org.skyrails.client.SkyrailsClient;
 
-import java.io.IOException;
-
 /**
  * User: activey
  * Date: 27.06.13
@@ -22,7 +20,7 @@ public class DirectServerHandle extends AbstractServerHandle {
             return null;
         }
         try {
-            client.sendMessage(buildCreateNode(nodeId));
+            client.executeCommand(buildCreateNode(nodeId));
             return nodeId;
         } catch (Exception e) {
             e.printStackTrace();
@@ -36,7 +34,7 @@ public class DirectServerHandle extends AbstractServerHandle {
             return null;
         }
         try {
-            client.sendMessage(buildCreateNode(node, label, texture));
+            client.executeCommand(buildCreateNode(node, label, texture));
             return node;
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,7 +47,7 @@ public class DirectServerHandle extends AbstractServerHandle {
             return null;
         }
         try {
-            client.sendMessage(buildCreateNode(nodeId, texture));
+            client.executeCommand(buildCreateNode(nodeId, texture));
             return nodeId;
         } catch (Exception e) {
             e.printStackTrace();
@@ -60,7 +58,7 @@ public class DirectServerHandle extends AbstractServerHandle {
     @Override
     public void createEdge(String nodeFrom, String nodeTo, String relationType) {
         try {
-            client.sendMessage(buildCreateEdge(nodeFrom, nodeTo, relationType));
+            client.executeCommand(buildCreateEdge(nodeFrom, nodeTo, relationType));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,7 +72,7 @@ public class DirectServerHandle extends AbstractServerHandle {
     @Override
     public void clearGraph() {
         try {
-            client.sendMessage(buildCleargraph());
+            client.executeCommand(buildCleargraph());
         } catch (Exception e) {
             e.printStackTrace();
         }

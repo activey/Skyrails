@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.skyrails</groupId>
+    <groupId>org.skyrails</groupId>
     <artifactId>skyrails-neo4j</artifactId>
     <version>0.0.1</version>
 
@@ -40,14 +40,14 @@
             <version>1.7.5</version>
         </dependency>
         <dependency>
-            <groupId>com.skyrails</groupId>
+            <groupId>org.skyrails</groupId>
             <artifactId>skyrails-client</artifactId>
             <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.neo4j</groupId>
             <artifactId>neo4j</artifactId>
-            <version>1.9.RC1</version>
+            <version>2.0.0-M03</version>
         </dependency>
     </dependencies>
 

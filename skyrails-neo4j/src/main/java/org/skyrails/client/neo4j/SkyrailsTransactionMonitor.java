@@ -119,6 +119,9 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
         return "localhost";
     }
 
+    /**
+     *
+     */
     @Override
     public void afterRollback(TransactionData data, Object state) {
 
