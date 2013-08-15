@@ -13,6 +13,7 @@ public abstract class AbstractServerOperator implements IServerOperator {
 
     protected SkyrailsClient client;
 
+    @Override
     public void doOnServer() throws Exception {
         doOnServer(buildServerHandle());
 

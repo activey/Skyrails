@@ -3,6 +3,8 @@ package org.skyrails.client;
 import java.io.IOException;
 
 /**
+ * [TODO]
+ *
  * User: activey
  * Date: 27.06.13
  * Time: 16:39
