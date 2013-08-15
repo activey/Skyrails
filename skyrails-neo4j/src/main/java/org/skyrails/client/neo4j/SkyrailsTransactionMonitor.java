@@ -29,13 +29,14 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
         this.skyrails = new SkyrailsClient(getHost(), getPort());
         try {
             skyrails.connect();
-            // creating Neo4j root node
             skyrails.doOnServer(new DirectOperator() {
                 @Override
                 public void doOnServer(IServerHandle serverHandle) {
+                    // clearing graph just after monitor instance is created
                     serverHandle.clearGraph();
-                    // make sure you have this texture in your Skyrails instance
-                    serverHandle.createNode("0", "ROOT", "textures/computer.gif");
+
+                    // creating Neo4j root node
+                    serverHandle.createNode("0", "ROOT", SkyrailsTransactionMonitor.this.getNodeTexture());
                 }
             });
         } catch (Exception e) {
@@ -61,7 +62,8 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
                         // if property is not available, node id will be used as it's label
                         String nodeName = (String) node.getProperty(getLabelProperty(), node.getId() + "");
                         // creating node in Skyrails
-                        serverHandle.createNode(node.getId() + "", nodeName, "textures/computer.gif");
+                        serverHandle.createNode(node.getId() + "", nodeName, SkyrailsTransactionMonitor.this
+                                .getNodeTexture());
                     }
                 }
             });
@@ -84,7 +86,7 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
                 }
             });
         } catch (Exception e) {
-           log.error("", e);
+            log.error("", e);
         }
 
     }
@@ -103,7 +105,7 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
      * Method returns default port for connecting with Skyrails instance. You can change it to any value in your custom
      * implementation.
      *
-     * @return
+     * @return  Default port that Skyrails server is listening on.
      */
     protected int getPort() {
         return 9999;
@@ -113,15 +115,23 @@ public class SkyrailsTransactionMonitor implements TransactionEventHandler {
      * Method returns default host name for connecting with Skyrails instance. You can change it to any value in your
      * custom implementation.
      *
-     * @return
+     * @return  Default host name of remote Skyrails server.
      */
     protected String getHost() {
         return "localhost";
     }
 
     /**
+     * Method returns texture location for Skyrails nodes. You can change it to any value in your custom
+     * implementation.
      *
+     * @return Default texture location for nodes created in Skyrails instance.
      */
+    protected String getNodeTexture() {
+        return "textures/computer.gif";
+    }
+
+
     @Override
     public void afterRollback(TransactionData data, Object state) {
 

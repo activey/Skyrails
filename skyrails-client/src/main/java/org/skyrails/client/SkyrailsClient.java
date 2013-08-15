@@ -7,7 +7,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.nio.channels.AlreadyConnectedException;
 
 /**
  * Class provices basic operations for accessing and interacting with remote Skyrails server instance. First you have to
@@ -28,9 +27,17 @@ import java.nio.channels.AlreadyConnectedException;
  *          </pre>
  *     </li>
  *     <li>
- *          or in more complex manner using one of available {@link IServerOperator} implementation, eg:<br/>
+ *          or in more complex manner using one of available {@link IServerOperator} implementation that provides
+ *          high-level Skyrails interaction API, eg:<br/>
  *          <pre>
- *              [TODO]
+ *              client.doOnServer(new DirectOperator() {
+
+                    public void doOnServer({@link IServerHandle} serverHandle) {
+                        serverHandle.createNode("node1", "First Node", "textures/computer.png");
+                        serverHandle.createNode("node2", "Second Node", "textures/computer.png");
+                        serverHandle.createEdge("node1", "node2", "LEADS_TO");
+                    }
+                });
  *          </pre>
  *     </li>
  * </ul>
@@ -60,21 +67,38 @@ public class SkyrailsClient {
         this.port = port;
     }
 
+    /**
+     * Method provides an interface for running commands on remote Skyrails instance using high level API.
+     * Once {@see IServerOperator} instance is given, all Skyrails commands are wrapped by methods provided by
+     * {@see IServerHandle} instance to make it play nicely using clean API.
+     *
+     * @param operator Skyrails server operator instance.
+     * @throws Exception Exception is thrown when something goes wrong during operator usage.
+     * @see IServerOperator
+     * @see org.skyrails.client.operator.DirectOperator
+     * @see org.skyrails.client.operator.BulkOperator
+     */
     public void doOnServer(IServerOperator operator) throws Exception {
         operator.setClient(this);
         operator.doOnServer();
     }
 
+    /**
+     * Method verifies if remote client connection is already established.
+     *
+     * @return Value indicating if client connection is already established.
+     */
     public final boolean isConnected() {
         return this.socket != null && this.socket.isConnected();
     }
 
     /**
-     * Method .
+     * Method establishes client connection with Skyrails server instance.
      *
-     * @throws IOException
+     * @throws IOException Exception is thrown when some IO operation fails.
+     * @throws AlreadyConnectedException Exception is thrown when connection is already established.
      */
-    public final void connect() throws IOException {
+    public final void connect() throws IOException, AlreadyConnectedException {
         if (isConnected()) {
             throw new AlreadyConnectedException();
         }
@@ -86,7 +110,7 @@ public class SkyrailsClient {
      * Disconnects client socket from remote Skyrails instance.
      *
      * @throws NotConnectedException Exception is thrown when client is not yet connected.
-     * @throws IOException           Exception is thrown when some IO operation failed.
+     * @throws IOException           Exception is thrown when some IO operation fails.
      */
     public final void disconnect() throws NotConnectedException, IOException {
         if (!isConnected()) {
@@ -99,7 +123,7 @@ public class SkyrailsClient {
     }
 
     /**
-     * Method provides basic interface for executing commands on remote Skyrails server instance.
+     * Method provides basic interface for executing commands on remote Skyrails server instance (Low level access).
      *
      * @param command Command to execute, eg: node1 -- has -> node2
      * @throws NotConnectedException Exception is thrown when client is not yet connected.
@@ -110,7 +134,7 @@ public class SkyrailsClient {
             throw new NotConnectedException();
         }
         if (log.isTraceEnabled()) {
-            log.trace(String.format("Sending message: %s", command));
+            log.trace(String.format("Executing command: %s", command));
         }
 
         /*
