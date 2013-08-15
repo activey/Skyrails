@@ -1,0 +1,64 @@
+// clear graph
+cleargraph;
+
+// otwieranie serwera tcp
+openserver 9999;
+
+// tworzenie node o nazwie "aaa" w relacji o nazwie "bbb" do node "ccc"
+aaa--bbb->ccc;
+
+// tworzenie relacji o nazwie "bbb" do node "ddd" o sile oddzialywania 40
+//ccc--bbb->ddd ::> pullstrength 40;
+
+// ukrywanie noda z edgami
+//with ccc >>> do itemhidden true end;
+
+// tworzy lub aktualizuje node z dodatkowymi ustawieniami
+node:aaa ::> (itemsize 2.0; itemtexture name "icons/DOA/ROOT.png"; itemcolor rgb: 90 90 90);
+node:bbb ::> (itemsize 2.0; itemtexture name "icons/DOA/document.png"; itemcolor rgb: 90 90 90);
+node:ccc ::> (itemsize 2.0; itemtexture name "icons/DOA/document_definition.png"; itemcolor rgb: 90 90 90);
+
+// mozliwosc zmiany tylko jednego atrybutu obiektu
+node:ccc ::> (itemcolor rgb: 10 90 90);
+
+// deklaracja funkcji	
+sub xoom(
+   _graph::> setfreeview(@3d:0 0 -10, 3d:0 0 0);
+);
+
+sub test(
+   trace "aaaaa!!!";
+);
+
+// dodawanie linii tekstu w etykietce onhover
+node:ccc ::> pushhoverlabel "line1";
+node:ccc ::> pushhoverlabel "line2";
+
+// zmiana koloru edgow noda
+with ccc~* >>> do itemcolor rgb: 255 255 30 end;
+
+// dodatkowe akcje do wykonywania na grafie DOA
+with keys:root do(
+   submenu(@ "/d", "doamenu", "DOA menu");
+) end;
+
+with keys:doamenu do (
+	action(@ "p", (> ./higlight_tree), "higlight DOA tree");
+) end;
+
+sub higlight_tree(
+	with node_0.~HAS_ENTITY do (
+		thenode <<c: this;
+		./higlight_tree_part	
+	) end;
+);
+
+sub higlight_tree_part (	
+	itemcolor rgb: 255 255 100;
+	itemdkcolor rgb: 255 255 100;
+	itemsize 3;		
+);
+
+node:test ::> (itemtexture name "textures/computer.gif"; itemcolor rgb: 255 255 255);
+node:test ::> setemblem(@ meh2, "textures/star.gif", rgb:255 255 100, 1.0) ::> gesture(@ lL, test, "click me!");
+

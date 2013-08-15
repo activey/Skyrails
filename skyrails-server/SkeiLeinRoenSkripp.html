@@ -1,0 +1,1585 @@
+<html>
+<head><title>Skeilein/Roenskripp Reference</title>
+<style type="text/css">
+<!--
+@import url(out.css);
+-->
+</style>
+<body>
+<h1>Skeilein/Roenskripp Reference</h1><p>
+</p>
+<h2>Table of Contents</h2><a name="toctable"><table class="toc"><tr><td class="prectoctd"><a href="#prectable" class = "toclink">Table of Precedence</a></td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderoperators" class = "refheaderlink">group:operators</a></td></tr>
+<tr><td><table class="toc"><tr><td class="grouptoctd"><a href="#refheaderarithmetic" class = "refheaderlink">group:arithmetic</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperator!=" class = "refoperatorlink">!=</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator%" class = "refoperatorlink">%</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator&&" class = "refoperatorlink">&&</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator*" class = "refoperatorlink">*</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator+" class = "refoperatorlink">+</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator-" class = "refoperatorlink">-</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator." class = "refoperatorlink">.</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator/" class = "refoperatorlink">/</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator/\" class = "refoperatorlink">/\</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator<" class = "refoperatorlink"><</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator==" class = "refoperatorlink">==</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator>" class = "refoperatorlink">></a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormax" class = "refoperatorlink">max</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormin" class = "refoperatorlink">min</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsqrt" class = "refoperatorlink">sqrt</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatortofloat" class = "refoperatorlink">tofloat</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatortoint" class = "refoperatorlink">toint</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperator||" class = "refoperatorlink">||</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderbaseconstructs" class = "refheaderlink">group:baseconstructs</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorconditional" class = "refoperatorlink">conditional</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorconditionalWithElse" class = "refoperatorlink">conditionalWithElse</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcontextcall" class = "refoperatorlink">contextcall</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcontextexpr" class = "refoperatorlink">contextexpr</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcontextset" class = "refoperatorlink">contextset</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorforrange" class = "refoperatorlink">forrange</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorfrontcontextexpr" class = "refoperatorlink">frontcontextexpr</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemmember" class = "refoperatorlink">itemmember</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemmemberLowerPrecedence" class = "refoperatorlink">itemmemberLowerPrecedence</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormodcontextset" class = "refoperatorlink">modcontextset</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorreturn" class = "refoperatorlink">return</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsubcall2" class = "refoperatorlink">subcall2</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsubdeclare" class = "refoperatorlink">subdeclare</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorswitch" class = "refoperatorlink">switch</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorwithas" class = "refoperatorlink">withas</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorwithaswhere" class = "refoperatorlink">withaswhere</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorwithitem" class = "refoperatorlink">withitem</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorwithwhere" class = "refoperatorlink">withwhere</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderbasevals" class = "refheaderlink">group:basevals</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperator3dcoord" class = "refoperatorlink">3dcoord</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorfalse" class = "refoperatorlink">false</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornewobject" class = "refoperatorlink">newobject</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornull" class = "refoperatorlink">null</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorrgb" class = "refoperatorlink">rgb</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorrgba" class = "refoperatorlink">rgba</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorroenskrippconstructor" class = "refoperatorlink">roenskrippconstructor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorroenskrippdynaconstructor" class = "refoperatorlink">roenskrippdynaconstructor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorthis" class = "refoperatorlink">this</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatortrue" class = "refoperatorlink">true</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadercommands" class = "refheaderlink">group:commands</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorattribFXReset" class = "refoperatorlink">attribFXReset</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcleargraph" class = "refoperatorlink">cleargraph</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcolortheme" class = "refoperatorlink">colortheme</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorfileexists" class = "refoperatorlink">fileexists</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorhideUI" class = "refoperatorlink">hideUI</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorhidegraph" class = "refoperatorlink">hidegraph</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorloadfile" class = "refoperatorlink">loadfile</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoropenserver" class = "refoperatorlink">openserver</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorshowUI" class = "refoperatorlink">showUI</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorshowgraph" class = "refoperatorlink">showgraph</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderdatafields" class = "refheaderlink">group:datafields</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatordatafieldcaller" class = "refoperatorlink">datafieldcaller</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordatafieldcolsize" class = "refoperatorlink">datafieldcolsize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordatafieldglobalaccess" class = "refoperatorlink">datafieldglobalaccess</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordatafieldlineaccess" class = "refoperatorlink">datafieldlineaccess</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordatafieldrowsize" class = "refoperatorlink">datafieldrowsize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoropencsv" class = "refoperatorlink">opencsv</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderdebug" class = "refheaderlink">group:debug</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorlistnodeattribs" class = "refoperatorlink">listnodeattribs</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlistnodes" class = "refoperatorlink">listnodes</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlistnodesAll" class = "refoperatorlink">listnodesAll</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlistvars" class = "refoperatorlink">listvars</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlistvarsAll" class = "refoperatorlink">listvarsAll</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorshowsub" class = "refoperatorlink">showsub</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatortrace" class = "refoperatorlink">trace</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderdmaps" class = "refheaderlink">group:dmaps</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatordmapallaggregators" class = "refoperatorlink">dmapallaggregators</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapalldottilda" class = "refoperatorlink">dmapalldottilda</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapalledges" class = "refoperatorlink">dmapalledges</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapallmyedges" class = "refoperatorlink">dmapallmyedges</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapallneighbors" class = "refoperatorlink">dmapallneighbors</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapallnodes" class = "refoperatorlink">dmapallnodes</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapdottilda" class = "refoperatorlink">dmapdottilda</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapedges" class = "refoperatorlink">dmapedges</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapinwards" class = "refoperatorlink">dmapinwards</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapoutwards" class = "refoperatorlink">dmapoutwards</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapsel" class = "refoperatorlink">dmapsel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatordmapwithself" class = "refoperatorlink">dmapwithself</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadergraphics" class = "refheaderlink">group:graphics</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorsetfov" class = "refoperatorlink">setfov</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetinversion" class = "refoperatorlink">setinversion</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetskybox" class = "refoperatorlink">setskybox</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadergroups" class = "refheaderlink">group:groups</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorautogrouper" class = "refoperatorlink">autogrouper</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetgroup" class = "refoperatorlink">getgroup</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgroupAdd" class = "refoperatorlink">groupAdd</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgroupLeaderGet" class = "refoperatorlink">groupLeaderGet</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsubgroupAdd" class = "refoperatorlink">subgroupAdd</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadermenus" class = "refheaderlink">group:menus</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatordynalink" class = "refoperatorlink">dynalink</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuclear" class = "refoperatorlink">menuclear</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenucolor" class = "refoperatorlink">menucolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenudef" class = "refoperatorlink">menudef</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuhide" class = "refoperatorlink">menuhide</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuline" class = "refoperatorlink">menuline</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenulink" class = "refoperatorlink">menulink</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenushow" class = "refoperatorlink">menushow</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenutext" class = "refoperatorlink">menutext</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenutooltip" class = "refoperatorlink">menutooltip</a></td></tr>
+<tr><td class="grouptoctd"><a href="#refheadericons" class = "refheaderlink">group:icons</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatormenuicon" class = "refoperatorlink">menuicon</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuicondynalink" class = "refoperatorlink">menuicondynalink</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuiconlink" class = "refoperatorlink">menuiconlink</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuiconrot" class = "refoperatorlink">menuiconrot</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuiconsize" class = "refoperatorlink">menuiconsize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuicontooltip" class = "refoperatorlink">menuicontooltip</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormenuselicon" class = "refoperatorlink">menuselicon</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormi:hoversize" class = "refoperatorlink">mi:hoversize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormivertical" class = "refoperatorlink">mivertical</a></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadermiscrefs" class = "refheaderlink">group:miscrefs</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorgetGraphDisplay" class = "refoperatorlink">getGraphDisplay</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetKeyShortcutManager" class = "refoperatorlink">getKeyShortcutManager</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetKeyShortcuts" class = "refoperatorlink">getKeyShortcuts</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetProcess" class = "refoperatorlink">getProcess</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetRefIndexer" class = "refoperatorlink">getRefIndexer</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetRoenHost" class = "refoperatorlink">getRoenHost</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetVirtualPointer" class = "refoperatorlink">getVirtualPointer</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderproteins" class = "refheaderlink">group:proteins</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorpdbmodel" class = "refoperatorlink">pdbmodel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorpdbshow" class = "refoperatorlink">pdbshow</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderrunereferences" class = "refheaderlink">group:runereferences</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperator#" class = "refoperatorlink">#</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorattribset" class = "refoperatorlink">attribset</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetmethodlist" class = "refoperatorlink">getmethodlist</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorinitattribute" class = "refoperatorlink">initattribute</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatormethodcall" class = "refoperatorlink">methodcall</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetattribute" class = "refoperatorlink">setattribute</a></td></tr>
+<tr><td class="grouptoctd"><a href="#refheadercirrus" class = "refheaderlink">group:cirrus</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatoruiboxconstruct" class = "refoperatorlink">uiboxconstruct</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderitemdisplay" class = "refheaderlink">group:itemdisplay</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorclearcolors" class = "refoperatorlink">clearcolors</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorextratexture" class = "refoperatorlink">extratexture</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetitemcolor" class = "refoperatorlink">getitemcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemchasesize" class = "refoperatorlink">itemchasesize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemcolor" class = "refoperatorlink">itemcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemdarkcolor" class = "refoperatorlink">itemdarkcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemdarkflashcolor" class = "refoperatorlink">itemdarkflashcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemflashcolor" class = "refoperatorlink">itemflashcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemgroupersize" class = "refoperatorlink">itemgroupersize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemhidden" class = "refoperatorlink">itemhidden</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemid" class = "refoperatorlink">itemid</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemimportance" class = "refoperatorlink">itemimportance</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemmass" class = "refoperatorlink">itemmass</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemsize" class = "refoperatorlink">itemsize</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemtexture" class = "refoperatorlink">itemtexture</a></td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderedgecommands" class = "refheaderlink">group:edgecommands</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorarcconstruct" class = "refoperatorlink">arcconstruct</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorarcness" class = "refoperatorlink">arcness</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlinkorigin" class = "refoperatorlink">linkorigin</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlinktarget" class = "refoperatorlink">linktarget</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorlinktype" class = "refoperatorlink">linktype</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorpullstrength" class = "refoperatorlink">pullstrength</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetcurvy" class = "refoperatorlink">setcurvy</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetnocurvy" class = "refoperatorlink">setnocurvy</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatortieconstruct" class = "refoperatorlink">tieconstruct</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadernodecommands" class = "refheaderlink">group:nodecommands</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatornodeconstruct" class = "refoperatorlink">nodeconstruct</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornodeexists" class = "refoperatorlink">nodeexists</a></td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderbindings" class = "refheaderlink">group:bindings</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorclearbindings" class = "refoperatorlink">clearbindings</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornodeplane" class = "refoperatorlink">nodeplane</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornodesphere" class = "refoperatorlink">nodesphere</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadercharts" class = "refheaderlink">group:charts</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorcelcolor" class = "refoperatorlink">celcolor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcelfactor" class = "refoperatorlink">celfactor</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorceltexture" class = "refoperatorlink">celtexture</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcelvalue" class = "refoperatorlink">celvalue</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorchartflowness" class = "refoperatorlink">chartflowness</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorchartrotation" class = "refoperatorlink">chartrotation</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcharttotal" class = "refoperatorlink">charttotal</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorcirclechart" class = "refoperatorlink">circlechart</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorclearcirclechart" class = "refoperatorlink">clearcirclechart</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadergestures" class = "refheaderlink">group:gestures</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorcleargestures" class = "refoperatorlink">cleargestures</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatoritemgesture" class = "refoperatorlink">itemgesture</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderlabelling" class = "refheaderlink">group:labelling</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorclearhoverlabel" class = "refoperatorlink">clearhoverlabel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorclearlabels" class = "refoperatorlink">clearlabels</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorhoverlabel" class = "refoperatorlink">hoverlabel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorinserthoverlabel" class = "refoperatorlink">inserthoverlabel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornodeinfo" class = "refoperatorlink">nodeinfo</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatornodelabel" class = "refoperatorlink">nodelabel</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorpushhoverlabel" class = "refoperatorlink">pushhoverlabel</a></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderrunevalsets" class = "refheaderlink">group:runevalsets</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatoraddToRVSet" class = "refoperatorlink">addToRVSet</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetRVSet" class = "refoperatorlink">getRVSet</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheaderselections" class = "refheaderlink">group:selections</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatorselectionAdd" class = "refoperatorlink">selectionAdd</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorselectionAddMatching" class = "refoperatorlink">selectionAddMatching</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorselectionAddOnCondition" class = "refoperatorlink">selectionAddOnCondition</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorselectionBacktrack" class = "refoperatorlink">selectionBacktrack</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorselectionClear" class = "refoperatorlink">selectionClear</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorselectionUse" class = "refoperatorlink">selectionUse</a></td></tr>
+</table>
+</td></tr>
+<tr><td class="grouptoctd"><a href="#refheadervariables" class = "refheaderlink">group:variables</a></td></tr>
+<tr><td><table class="toc"><tr><td class="operatortoctd"><a href="#refoperatordeclarevar" class = "refoperatorlink">declarevar</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorgetvar" class = "refoperatorlink">getvar</a></td></tr>
+<tr><td class="operatortoctd"><a href="#refoperatorsetvar" class = "refoperatorlink">setvar</a></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<h2>Table of Precedence</h2><a name="prectable"><table class="prectab"><tr></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">2</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorfalse" class = "refoperatortabletlink">false</a><span class="tokentablet">false</span></span>
+<span class="prectabletspan">
+<a href="#refoperatornull" class = "refoperatortabletlink">null</a><span class="tokentablet">null</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorroenskrippconstructor" class = "refoperatortabletlink">roenskrippconstructor</a><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorroenskrippdynaconstructor" class = "refoperatortabletlink">roenskrippdynaconstructor</a><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorthis" class = "refoperatortabletlink">this</a><span class="tokentablet">this</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatortrue" class = "refoperatortabletlink">true</a><span class="tokentablet">true</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapallaggregators" class = "refoperatortabletlink">dmapallaggregators</a><span class="tokentablet">allaggregators</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapalledges" class = "refoperatortabletlink">dmapalledges</a><span class="tokentablet">alledges</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapallnodes" class = "refoperatortabletlink">dmapallnodes</a><span class="tokentablet">allnodes</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorarcness" class = "refoperatortabletlink">arcness</a><span class="tokentablet">arcness</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorlinkorigin" class = "refoperatortabletlink">linkorigin</a><span class="tokentablet">linkorigin</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorlinktarget" class = "refoperatortabletlink">linktarget</a><span class="tokentablet">linktarget</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorlinktype" class = "refoperatortabletlink">linktype</a><span class="tokentablet">linktype</span></span>
+<hr class="precruler">
+</td></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">4</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorcontextcall" class = "refoperatortabletlink">contextcall</a><span class="tokentablet">c:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsubcall2" class = "refoperatortabletlink">subcall2</a><span class="tokentablet">./</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatornewobject" class = "refoperatortabletlink">newobject</a><span class="tokentablet">new:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapsel" class = "refoperatortabletlink">dmapsel</a><span class="tokentablet">sel:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetgroup" class = "refoperatortabletlink">getgroup</a><span class="tokentablet">group:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgroupLeaderGet" class = "refoperatortabletlink">groupLeaderGet</a><span class="tokentablet">groupleader:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetGraphDisplay" class = "refoperatortabletlink">getGraphDisplay</a><span class="tokentablet">_graph</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgetKeyShortcutManager" class = "refoperatortabletlink">getKeyShortcutManager</a><span class="tokentablet">_keys</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetKeyShortcuts" class = "refoperatortabletlink">getKeyShortcuts</a><span class="tokentablet">keys:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgetProcess" class = "refoperatortabletlink">getProcess</a><span class="tokentablet">proc:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetRefIndexer" class = "refoperatortabletlink">getRefIndexer</a><span class="tokentablet">refindex:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgetRoenHost" class = "refoperatortabletlink">getRoenHost</a><span class="tokentablet">_roen</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetVirtualPointer" class = "refoperatortabletlink">getVirtualPointer</a><span class="tokentablet">vpointer:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormethodcall" class = "refoperatortabletlink">methodcall</a><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoruiboxconstruct" class = "refoperatortabletlink">uiboxconstruct</a><span class="tokentablet">ui:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatornodeconstruct" class = "refoperatortabletlink">nodeconstruct</a><span class="tokentablet">node:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatornodeexists" class = "refoperatortabletlink">nodeexists</a><span class="tokentablet">nodeexists</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgetRVSet" class = "refoperatortabletlink">getRVSet</a><span class="tokentablet">set:</span><span class="slottablet">arg1</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">5</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator." class = "refoperatortabletlink">.</a><span class="slottablet">arg1</span><span class="tokentablet">.</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapalldottilda" class = "refoperatortabletlink">dmapalldottilda</a><span class="slottablet">arg1</span><span class="tokentablet">.~*</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapallmyedges" class = "refoperatortabletlink">dmapallmyedges</a><span class="slottablet">arg1</span><span class="tokentablet">~*</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapallneighbors" class = "refoperatortabletlink">dmapallneighbors</a><span class="slottablet">arg1</span><span class="tokentablet">.*</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapdottilda" class = "refoperatortabletlink">dmapdottilda</a><span class="slottablet">arg1</span><span class="tokentablet">.~</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapedges" class = "refoperatortabletlink">dmapedges</a><span class="slottablet">arg1</span><span class="tokentablet">~</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator#" class = "refoperatortabletlink">#</a><span class="tokentablet">&#035;</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">6</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator%" class = "refoperatortabletlink">%</a><span class="slottablet">arg1</span><span class="tokentablet">&#037;</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator*" class = "refoperatortabletlink">*</a><span class="slottablet">arg1</span><span class="tokentablet">*</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator/" class = "refoperatortabletlink">/</a><span class="slottablet">arg1</span><span class="tokentablet">/</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapinwards" class = "refoperatortabletlink">dmapinwards</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;&lt;</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordmapoutwards" class = "refoperatortabletlink">dmapoutwards</a><span class="slottablet">arg1</span><span class="tokentablet">&gt;&gt;&gt;</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordmapwithself" class = "refoperatortabletlink">dmapwithself</a><span class="slottablet">arg1</span><span class="tokentablet">^</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">7</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator+" class = "refoperatortabletlink">+</a><span class="slottablet">arg1</span><span class="tokentablet">&#043;</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator-" class = "refoperatortabletlink">-</a><span class="slottablet">arg1</span><span class="tokentablet">&#045;</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator/\" class = "refoperatortabletlink">/\</a><span class="slottablet">arg1</span><span class="tokentablet">/\</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+</td></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">9</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatormax" class = "refoperatortabletlink">max</a><span class="tokentablet">max</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormin" class = "refoperatortabletlink">min</a><span class="tokentablet">min</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsqrt" class = "refoperatortabletlink">sqrt</a><span class="tokentablet">sqrt</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatortofloat" class = "refoperatortabletlink">tofloat</a><span class="tokentablet">tofloat</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatortoint" class = "refoperatortabletlink">toint</a><span class="tokentablet">toint</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">10</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatoritemmember" class = "refoperatortabletlink">itemmember</a><span class="slottablet">arg1</span><span class="tokentablet">::</span><span class="slottablet">arg2</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">11</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator<" class = "refoperatortabletlink"><</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator>" class = "refoperatortabletlink">></a><span class="slottablet">arg1</span><span class="tokentablet">&gt;</span><span class="slottablet">arg2</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">12</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator!=" class = "refoperatortabletlink">!=</a><span class="slottablet">arg1</span><span class="tokentablet">!=</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperator==" class = "refoperatortabletlink">==</a><span class="slottablet">arg1</span><span class="tokentablet">==</span><span class="slottablet">arg2</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">13</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator&&" class = "refoperatortabletlink">&&</a><span class="slottablet">arg1</span><span class="tokentablet">&amp;&amp;</span><span class="slottablet">arg2</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">14</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator||" class = "refoperatortabletlink">||</a><span class="slottablet">arg1</span><span class="tokentablet">||</span><span class="slottablet">arg2</span></span>
+</td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">18</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperator3dcoord" class = "refoperatortabletlink">3dcoord</a><span class="tokentablet">3d:</span><span class="slottablet">arg1arg2arg3</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorrgb" class = "refoperatortabletlink">rgb</a><span class="tokentablet">rgb:</span><span class="slottablet">arg1arg2arg3</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorrgba" class = "refoperatortabletlink">rgba</a><span class="tokentablet">rgba:</span><span class="slottablet">arg1arg2arg3arg4</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordatafieldcaller" class = "refoperatortabletlink">datafieldcaller</a><span class="tokentablet">df:</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordatafieldcolsize" class = "refoperatortabletlink">datafieldcolsize</a><span class="tokentablet">~colsize</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordatafieldglobalaccess" class = "refoperatortabletlink">datafieldglobalaccess</a><span class="tokentablet">~p:</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordatafieldlineaccess" class = "refoperatortabletlink">datafieldlineaccess</a><span class="tokentablet">~l:</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatordatafieldrowsize" class = "refoperatortabletlink">datafieldrowsize</a><span class="tokentablet">~rowsize</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorarcconstruct" class = "refoperatortabletlink">arcconstruct</a><span class="slottablet">arg1</span><span class="tokentablet">&#045;&#045;</span><span class="slottablet">arg2</span><span class="tokentablet">&#045;&gt;</span><span class="slottablet">arg3</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatortieconstruct" class = "refoperatortabletlink">tieconstruct</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&#045;</span><span class="slottablet">arg2</span><span class="tokentablet">&#045;&gt;</span><span class="slottablet">arg3</span></span>
+</td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">24</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorgetmethodlist" class = "refoperatortabletlink">getmethodlist</a><span class="tokentablet">listmethods</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorinitattribute" class = "refoperatortabletlink">initattribute</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;@@&#035;</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsetattribute" class = "refoperatortabletlink">setattribute</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;&#035;</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">25</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatordeclarevar" class = "refoperatortabletlink">declarevar</a><span class="tokentablet">global</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgetvar" class = "refoperatortabletlink">getvar</a><span class="tokentablet">$</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsetvar" class = "refoperatortabletlink">setvar</a><span class="slottablet">arg1</span><span class="tokentablet">=</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+</td></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">27</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorcontextset" class = "refoperatortabletlink">contextset</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;c:</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormodcontextset" class = "refoperatortabletlink">modcontextset</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;mc:</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorattribset" class = "refoperatortabletlink">attribset</a><span class="slottablet">arg1</span><span class="tokentablet">:</span><span class="slottablet">arg2</span><span class="tokentablet">:</span></span>
+<hr class="precruler">
+</td></tr>
+<tr></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">30</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorlistnodeattribs" class = "refoperatortabletlink">listnodeattribs</a><span class="tokentablet">nodeattribs</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorlistnodes" class = "refoperatortabletlink">listnodes</a><span class="tokentablet">listnodes</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorlistvars" class = "refoperatortabletlink">listvars</a><span class="tokentablet">listvars</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">31</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorsubdeclare" class = "refoperatortabletlink">subdeclare</a><span class="tokentablet">sub</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorattribFXReset" class = "refoperatortabletlink">attribFXReset</a><span class="tokentablet">resetfx</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorcleargraph" class = "refoperatortabletlink">cleargraph</a><span class="tokentablet">cleargraph</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorcolortheme" class = "refoperatortabletlink">colortheme</a><span class="tokentablet">colortheme</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorfileexists" class = "refoperatortabletlink">fileexists</a><span class="tokentablet">fileexists</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorhideUI" class = "refoperatortabletlink">hideUI</a><span class="tokentablet">hideUI</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorhidegraph" class = "refoperatortabletlink">hidegraph</a><span class="tokentablet">hidegraph</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorloadfile" class = "refoperatortabletlink">loadfile</a><span class="tokentablet">loadfile</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoropenserver" class = "refoperatortabletlink">openserver</a><span class="tokentablet">openserver</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorshowUI" class = "refoperatortabletlink">showUI</a><span class="tokentablet">showUI</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorshowgraph" class = "refoperatortabletlink">showgraph</a><span class="tokentablet">showgraph</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoropencsv" class = "refoperatortabletlink">opencsv</a><span class="tokentablet">opencsv</span><span class="slottablet">arg1</span><span class="tokentablet">as</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorlistnodesAll" class = "refoperatortabletlink">listnodesAll</a><span class="tokentablet">listnodes</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorlistvarsAll" class = "refoperatortabletlink">listvarsAll</a><span class="tokentablet">listvars</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorshowsub" class = "refoperatortabletlink">showsub</a><span class="tokentablet">showsub</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatortrace" class = "refoperatortabletlink">trace</a><span class="tokentablet">trace</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsetfov" class = "refoperatortabletlink">setfov</a><span class="tokentablet">setfov</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorsetinversion" class = "refoperatortabletlink">setinversion</a><span class="tokentablet">setinversion</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsetskybox" class = "refoperatortabletlink">setskybox</a><span class="tokentablet">setskybox</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorautogrouper" class = "refoperatortabletlink">autogrouper</a><span class="tokentablet">autogrouper</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorgroupAdd" class = "refoperatortabletlink">groupAdd</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;group:</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorsubgroupAdd" class = "refoperatortabletlink">subgroupAdd</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;subgroup:</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatordynalink" class = "refoperatortabletlink">dynalink</a><span class="tokentablet">dynalink</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenuclear" class = "refoperatortabletlink">menuclear</a><span class="tokentablet">menuclear</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenucolor" class = "refoperatortabletlink">menucolor</a><span class="tokentablet">menucolor</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenudef" class = "refoperatortabletlink">menudef</a><span class="tokentablet">menudef</span><span class="slottablet">arg1</span><span class="tokentablet">[</span><span class="slottablet">arg2</span><span class="tokentablet">]</span><span class="slottablet">arg3</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenuhide" class = "refoperatortabletlink">menuhide</a><span class="tokentablet">menuhide</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenuline" class = "refoperatortabletlink">menuline</a><span class="tokentablet">menuline</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenulink" class = "refoperatortabletlink">menulink</a><span class="tokentablet">menulink</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenushow" class = "refoperatortabletlink">menushow</a><span class="tokentablet">menushow</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenutext" class = "refoperatortabletlink">menutext</a><span class="tokentablet">menutext</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenutooltip" class = "refoperatortabletlink">menutooltip</a><span class="tokentablet">menutooltip</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenuicon" class = "refoperatortabletlink">menuicon</a><span class="tokentablet">menuicon</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenuicondynalink" class = "refoperatortabletlink">menuicondynalink</a><span class="tokentablet">mi:dynalink</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenuiconlink" class = "refoperatortabletlink">menuiconlink</a><span class="tokentablet">mi:link</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenuiconrot" class = "refoperatortabletlink">menuiconrot</a><span class="tokentablet">mi:rotspeed</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenuiconsize" class = "refoperatortabletlink">menuiconsize</a><span class="tokentablet">mi:size</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormenuicontooltip" class = "refoperatortabletlink">menuicontooltip</a><span class="tokentablet">mi:tooltip</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormenuselicon" class = "refoperatortabletlink">menuselicon</a><span class="tokentablet">mi:select</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatormi:hoversize" class = "refoperatortabletlink">mi:hoversize</a><span class="tokentablet">mi:hoversize</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatormivertical" class = "refoperatortabletlink">mivertical</a><span class="tokentablet">mi:vertical</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorpdbmodel" class = "refoperatortabletlink">pdbmodel</a><span class="tokentablet">pdbmodel</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorpdbshow" class = "refoperatortabletlink">pdbshow</a><span class="tokentablet">pdbshow</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorclearcolors" class = "refoperatortabletlink">clearcolors</a><span class="tokentablet">clearcolors</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorextratexture" class = "refoperatortabletlink">extratexture</a><span class="tokentablet">extratexture</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorgetitemcolor" class = "refoperatortabletlink">getitemcolor</a><span class="tokentablet">getitemcolor</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemchasesize" class = "refoperatortabletlink">itemchasesize</a><span class="tokentablet">itemchasesize</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemcolor" class = "refoperatortabletlink">itemcolor</a><span class="tokentablet">itemcolor</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemdarkcolor" class = "refoperatortabletlink">itemdarkcolor</a><span class="tokentablet">itemdkcolor</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemdarkflashcolor" class = "refoperatortabletlink">itemdarkflashcolor</a><span class="tokentablet">itemdarkflashcolor</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemflashcolor" class = "refoperatortabletlink">itemflashcolor</a><span class="tokentablet">itemflashcolor</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemgroupersize" class = "refoperatortabletlink">itemgroupersize</a><span class="tokentablet">groupersize</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemhidden" class = "refoperatortabletlink">itemhidden</a><span class="tokentablet">itemhidden</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemid" class = "refoperatortabletlink">itemid</a><span class="tokentablet">itemid</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemimportance" class = "refoperatortabletlink">itemimportance</a><span class="tokentablet">itemimportance</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemmass" class = "refoperatortabletlink">itemmass</a><span class="tokentablet">itemmass</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemsize" class = "refoperatortabletlink">itemsize</a><span class="tokentablet">itemsize</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatoritemtexture" class = "refoperatortabletlink">itemtexture</a><span class="tokentablet">itemtexture</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorpullstrength" class = "refoperatortabletlink">pullstrength</a><span class="tokentablet">pullstrength</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorsetcurvy" class = "refoperatortabletlink">setcurvy</a><span class="tokentablet">edge:curve</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorsetnocurvy" class = "refoperatortabletlink">setnocurvy</a><span class="tokentablet">edge:nocurve</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorclearbindings" class = "refoperatortabletlink">clearbindings</a><span class="tokentablet">clearbindings</span></span>
+<span class="prectabletspan">
+<a href="#refoperatornodeplane" class = "refoperatortabletlink">nodeplane</a><span class="tokentablet">nodeplane</span><span class="slottablet">arg1arg2arg3</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatornodesphere" class = "refoperatortabletlink">nodesphere</a><span class="tokentablet">nodesphere</span><span class="slottablet">arg1arg2arg3arg4</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorcelcolor" class = "refoperatortabletlink">celcolor</a><span class="tokentablet">celcolor</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorcelfactor" class = "refoperatortabletlink">celfactor</a><span class="tokentablet">celfactor</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorceltexture" class = "refoperatortabletlink">celtexture</a><span class="tokentablet">celtexture</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorcelvalue" class = "refoperatortabletlink">celvalue</a><span class="tokentablet">celvalue</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorchartflowness" class = "refoperatortabletlink">chartflowness</a><span class="tokentablet">chartflowness</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorchartrotation" class = "refoperatortabletlink">chartrotation</a><span class="tokentablet">chartrotation</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorcharttotal" class = "refoperatortabletlink">charttotal</a><span class="tokentablet">charttotal</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorcirclechart" class = "refoperatortabletlink">circlechart</a><span class="tokentablet">circlechart</span><span class="slottablet">arg1arg2arg3</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorclearcirclechart" class = "refoperatortabletlink">clearcirclechart</a><span class="tokentablet">clearcirclechart</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorcleargestures" class = "refoperatortabletlink">cleargestures</a><span class="tokentablet">cleargestures</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoritemgesture" class = "refoperatortabletlink">itemgesture</a><span class="tokentablet">itemgesture</span><span class="slottablet">arg1arg2arg3</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorclearhoverlabel" class = "refoperatortabletlink">clearhoverlabel</a><span class="tokentablet">clearhoverlabel</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorclearlabels" class = "refoperatortabletlink">clearlabels</a><span class="tokentablet">clearlabels</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorhoverlabel" class = "refoperatortabletlink">hoverlabel</a><span class="tokentablet">hoverlabel</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorinserthoverlabel" class = "refoperatortabletlink">inserthoverlabel</a><span class="tokentablet">inserthoverlabel</span><span class="slottablet">arg1arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatornodeinfo" class = "refoperatortabletlink">nodeinfo</a><span class="tokentablet">nodeinfo</span><span class="slottablet">arg1arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatornodelabel" class = "refoperatortabletlink">nodelabel</a><span class="tokentablet">nodelabel</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorpushhoverlabel" class = "refoperatortabletlink">pushhoverlabel</a><span class="tokentablet">pushhoverlabel</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatoraddToRVSet" class = "refoperatortabletlink">addToRVSet</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;set:</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorselectionAdd" class = "refoperatortabletlink">selectionAdd</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;sel:</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorselectionAddMatching" class = "refoperatortabletlink">selectionAddMatching</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;sel~</span><span class="slottablet">arg2</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorselectionAddOnCondition" class = "refoperatortabletlink">selectionAddOnCondition</a><span class="slottablet">arg1</span><span class="tokentablet">&lt;&lt;selwhere</span><span class="slottablet">arg2</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorselectionBacktrack" class = "refoperatortabletlink">selectionBacktrack</a><span class="tokentablet">backtracksel</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorselectionClear" class = "refoperatortabletlink">selectionClear</a><span class="tokentablet">clearsel</span><span class="slottablet">arg1</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorselectionUse" class = "refoperatortabletlink">selectionUse</a><span class="tokentablet">usesel</span><span class="slottablet">arg1</span></span>
+<hr class="precruler">
+</td></tr>
+<tr></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">33</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorcontextexpr" class = "refoperatortabletlink">contextexpr</a><span class="slottablet">arg1</span><span class="tokentablet">[</span><span class="slottablet">arg2</span><span class="tokentablet">]</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">34</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorreturn" class = "refoperatortabletlink">return</a><span class="tokentablet">return</span><span class="slottablet">arg1</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">35</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorconditionalWithElse" class = "refoperatortabletlink">conditionalWithElse</a><span class="tokentablet">if</span><span class="slottablet">arg1</span><span class="tokentablet">then</span><span class="slottablet">arg2</span><span class="tokentablet">else</span><span class="slottablet">arg3</span><span class="tokentablet">end</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorforrange" class = "refoperatortabletlink">forrange</a><span class="tokentablet">for</span><span class="slottablet">arg1</span><span class="tokentablet">&lt;&#045;</span><span class="slottablet">arg2</span><span class="tokentablet">..</span><span class="slottablet">arg3</span><span class="tokentablet">do</span><span class="slottablet">arg4</span><span class="tokentablet">end</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorfrontcontextexpr" class = "refoperatortabletlink">frontcontextexpr</a><span class="tokentablet">[</span><span class="slottablet">arg1</span><span class="tokentablet">]with</span><span class="slottablet">arg2</span><span class="tokentablet">end</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorswitch" class = "refoperatortabletlink">switch</a><span class="tokentablet">switch</span><span class="slottablet">arg1</span><span class="tokentablet">do</span><span class="slottablet">arg2</span><span class="tokentablet">end</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorwithas" class = "refoperatortabletlink">withas</a><span class="tokentablet">with</span><span class="slottablet">arg1</span><span class="tokentablet">as</span><span class="slottablet">arg2</span><span class="tokentablet">do</span><span class="slottablet">arg3</span><span class="tokentablet">end</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorwithaswhere" class = "refoperatortabletlink">withaswhere</a><span class="tokentablet">with</span><span class="slottablet">arg1</span><span class="tokentablet">as</span><span class="slottablet">arg2</span><span class="tokentablet">where</span><span class="slottablet">arg3</span><span class="tokentablet">do</span><span class="slottablet">arg4</span><span class="tokentablet">end</span></span>
+<span class="prectabletspan">
+<a href="#refoperatorwithitem" class = "refoperatortabletlink">withitem</a><span class="tokentablet">with</span><span class="slottablet">arg1</span><span class="tokentablet">do</span><span class="slottablet">arg2</span><span class="tokentablet">end</span></span>
+<hr class="precruler">
+<span class="prectabletspan">
+<a href="#refoperatorwithwhere" class = "refoperatortabletlink">withwhere</a><span class="tokentablet">with</span><span class="slottablet">arg1</span><span class="tokentablet">where</span><span class="slottablet">arg2</span><span class="tokentablet">do</span><span class="slottablet">arg3</span><span class="tokentablet">end</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">36</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatorconditional" class = "refoperatortabletlink">conditional</a><span class="tokentablet">if</span><span class="slottablet">arg1</span><span class="tokentablet">then</span><span class="slottablet">arg2</span><span class="tokentablet">end</span></span>
+</td></tr>
+<tr><td class="precnumbertd"><span class="precnumbertext">37</span></td><td class="prectd"><span class="prectabletspan">
+<a href="#refoperatoritemmemberLowerPrecedence" class = "refoperatortabletlink">itemmemberLowerPrecedence</a><span class="slottablet">arg1</span><span class="tokentablet">::&gt;</span><span class="slottablet">arg2</span></span>
+</td></tr>
+</table>
+<h2>Operators and Commands</h2><table class="ref"><tr><td class="reftableheader"><a name="refheaderoperators"><span class="refheader">operators</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableheader"><a name="refheaderarithmetic"><span class="refheader">arithmetic</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperator!="><span class="refoperator">!=</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">!=</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator%"><span class="refoperator">&#037;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&#037;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator&&"><span class="refoperator">&amp;&amp;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&amp;&amp;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator*"><span class="refoperator">*</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">*</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator+"><span class="refoperator">&#043;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&#043;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator-"><span class="refoperator">&#045;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&#045;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator."><span class="refoperator">.</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">.</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator/"><span class="refoperator">/</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">/</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator/\"><span class="refoperator">/\</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">/\</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator<"><span class="refoperator">&lt;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator=="><span class="refoperator">==</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">==</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator>"><span class="refoperator">&gt;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&gt;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormax"><span class="refoperator">max</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">max</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormin"><span class="refoperator">min</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">min</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsqrt"><span class="refoperator">sqrt</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">sqrt</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatortofloat"><span class="refoperator">tofloat</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">tofloat</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatortoint"><span class="refoperator">toint</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">toint</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperator||"><span class="refoperator">||</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">||</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderbaseconstructs"><span class="refheader">baseconstructs</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorconditional"><span class="refoperator">conditional</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">if</span> <span class="slot">arg1</span> <span class="token">then</span> <span class="slot">arg2</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorconditionalWithElse"><span class="refoperator">conditionalWithElse</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">if</span> <span class="slot">arg1</span> <span class="token">then</span> <span class="slot">arg2</span> <span class="token">else</span> <span class="slot">arg3</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcontextcall"><span class="refoperator">contextcall</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">c:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcontextexpr"><span class="refoperator">contextexpr</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">[</span> <span class="slot">arg2</span> <span class="token">]</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcontextset"><span class="refoperator">contextset</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;c:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorforrange"><span class="refoperator">forrange</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">for</span> <span class="slot">arg1</span> <span class="token">&lt;&#045;</span> <span class="slot">arg2</span> <span class="token">..</span> <span class="slot">arg3</span> <span class="token">do</span> <span class="slot">arg4</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorfrontcontextexpr"><span class="refoperator">frontcontextexpr</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">[</span> <span class="slot">arg1</span> <span class="token">]</span> <span class="token">with</span> <span class="slot">arg2</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemmember"><span class="refoperator">itemmember</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">::</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemmemberLowerPrecedence"><span class="refoperator">itemmemberLowerPrecedence</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">::&gt;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormodcontextset"><span class="refoperator">modcontextset</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;mc:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorreturn"><span class="refoperator">return</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">return</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsubcall2"><span class="refoperator">subcall2</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">./</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsubdeclare"><span class="refoperator">subdeclare</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">sub</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorswitch"><span class="refoperator">switch</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">switch</span> <span class="slot">arg1</span> <span class="token">do</span> <span class="slot">arg2</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorwithas"><span class="refoperator">withas</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">with</span> <span class="slot">arg1</span> <span class="token">as</span> <span class="slot">arg2</span> <span class="token">do</span> <span class="slot">arg3</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorwithaswhere"><span class="refoperator">withaswhere</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">with</span> <span class="slot">arg1</span> <span class="token">as</span> <span class="slot">arg2</span> <span class="token">where</span> <span class="slot">arg3</span> <span class="token">do</span> <span class="slot">arg4</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorwithitem"><span class="refoperator">withitem</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">with</span> <span class="slot">arg1</span> <span class="token">do</span> <span class="slot">arg2</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorwithwhere"><span class="refoperator">withwhere</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">with</span> <span class="slot">arg1</span> <span class="token">where</span> <span class="slot">arg2</span> <span class="token">do</span> <span class="slot">arg3</span> <span class="token">end</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderbasevals"><span class="refheader">basevals</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperator3dcoord"><span class="refoperator">3dcoord</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">3d:</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorfalse"><span class="refoperator">false</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">false</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornewobject"><span class="refoperator">newobject</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">new:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornull"><span class="refoperator">null</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">null</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorrgb"><span class="refoperator">rgb</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">rgb:</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorrgba"><span class="refoperator">rgba</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">rgba:</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> <span class="slot">arg4</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorroenskrippconstructor"><span class="refoperator">roenskrippconstructor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorroenskrippdynaconstructor"><span class="refoperator">roenskrippdynaconstructor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorthis"><span class="refoperator">this</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">this</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatortrue"><span class="refoperator">true</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">true</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadercommands"><span class="refheader">commands</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorattribFXReset"><span class="refoperator">attribFXReset</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">resetfx</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcleargraph"><span class="refoperator">cleargraph</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">cleargraph</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcolortheme"><span class="refoperator">colortheme</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">colortheme</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorfileexists"><span class="refoperator">fileexists</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">fileexists</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorhideUI"><span class="refoperator">hideUI</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">hideUI</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorhidegraph"><span class="refoperator">hidegraph</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">hidegraph</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorloadfile"><span class="refoperator">loadfile</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">loadfile</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoropenserver"><span class="refoperator">openserver</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">openserver</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorshowUI"><span class="refoperator">showUI</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">showUI</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorshowgraph"><span class="refoperator">showgraph</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">showgraph</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderdatafields"><span class="refheader">datafields</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatordatafieldcaller"><span class="refoperator">datafieldcaller</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">df:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordatafieldcolsize"><span class="refoperator">datafieldcolsize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">~colsize</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordatafieldglobalaccess"><span class="refoperator">datafieldglobalaccess</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">~p:</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordatafieldlineaccess"><span class="refoperator">datafieldlineaccess</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">~l:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordatafieldrowsize"><span class="refoperator">datafieldrowsize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">~rowsize</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoropencsv"><span class="refoperator">opencsv</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">opencsv</span> <span class="slot">arg1</span> <span class="token">as</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderdebug"><span class="refheader">debug</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlistnodeattribs"><span class="refoperator">listnodeattribs</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodeattribs</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlistnodes"><span class="refoperator">listnodes</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">listnodes</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlistnodesAll"><span class="refoperator">listnodesAll</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">listnodes</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlistvars"><span class="refoperator">listvars</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">listvars</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlistvarsAll"><span class="refoperator">listvarsAll</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">listvars</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorshowsub"><span class="refoperator">showsub</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">showsub</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatortrace"><span class="refoperator">trace</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">trace</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderdmaps"><span class="refheader">dmaps</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapallaggregators"><span class="refoperator">dmapallaggregators</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">all</span> <span class="token">aggregators</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapalldottilda"><span class="refoperator">dmapalldottilda</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">.~*</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapalledges"><span class="refoperator">dmapalledges</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">all</span> <span class="token">edges</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapallmyedges"><span class="refoperator">dmapallmyedges</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">~*</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapallneighbors"><span class="refoperator">dmapallneighbors</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">.*</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapallnodes"><span class="refoperator">dmapallnodes</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">all</span> <span class="token">nodes</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapdottilda"><span class="refoperator">dmapdottilda</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">.~</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapedges"><span class="refoperator">dmapedges</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">~</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapinwards"><span class="refoperator">dmapinwards</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;&lt;</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapoutwards"><span class="refoperator">dmapoutwards</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&gt;&gt;&gt;</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapsel"><span class="refoperator">dmapsel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">sel:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatordmapwithself"><span class="refoperator">dmapwithself</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">^</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadergraphics"><span class="refheader">graphics</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetfov"><span class="refoperator">setfov</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">setfov</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetinversion"><span class="refoperator">setinversion</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">setinversion</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetskybox"><span class="refoperator">setskybox</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">setskybox</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadergroups"><span class="refheader">groups</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorautogrouper"><span class="refoperator">autogrouper</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">autogrouper</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetgroup"><span class="refoperator">getgroup</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">group:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgroupAdd"><span class="refoperator">groupAdd</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;group:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgroupLeaderGet"><span class="refoperator">groupLeaderGet</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">groupleader:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsubgroupAdd"><span class="refoperator">subgroupAdd</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;subgroup:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadermenus"><span class="refheader">menus</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatordynalink"><span class="refoperator">dynalink</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">dynalink</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuclear"><span class="refoperator">menuclear</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menuclear</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenucolor"><span class="refoperator">menucolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menucolor</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenudef"><span class="refoperator">menudef</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menudef</span> <span class="slot">arg1</span> <span class="token">[</span> <span class="slot">arg2</span> <span class="token">]</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuhide"><span class="refoperator">menuhide</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menuhide</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuline"><span class="refoperator">menuline</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menuline</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenulink"><span class="refoperator">menulink</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menulink</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenushow"><span class="refoperator">menushow</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menushow</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenutext"><span class="refoperator">menutext</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menutext</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenutooltip"><span class="refoperator">menutooltip</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menutooltip</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadericons"><span class="refheader">icons</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuicon"><span class="refoperator">menuicon</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">menuicon</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuicondynalink"><span class="refoperator">menuicondynalink</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:dynalink</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuiconlink"><span class="refoperator">menuiconlink</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:link</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuiconrot"><span class="refoperator">menuiconrot</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:rotspeed</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuiconsize"><span class="refoperator">menuiconsize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:size</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuicontooltip"><span class="refoperator">menuicontooltip</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:tooltip</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormenuselicon"><span class="refoperator">menuselicon</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:select</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormi:hoversize"><span class="refoperator">mi:hoversize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:hoversize</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormivertical"><span class="refoperator">mivertical</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">mi:vertical</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadermiscrefs"><span class="refheader">miscrefs</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetGraphDisplay"><span class="refoperator">getGraphDisplay</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">_graph</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetKeyShortcutManager"><span class="refoperator">getKeyShortcutManager</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">_keys</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetKeyShortcuts"><span class="refoperator">getKeyShortcuts</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">keys:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetProcess"><span class="refoperator">getProcess</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">proc:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetRefIndexer"><span class="refoperator">getRefIndexer</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">refindex:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetRoenHost"><span class="refoperator">getRoenHost</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">_roen</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetVirtualPointer"><span class="refoperator">getVirtualPointer</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">vpointer:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderproteins"><span class="refheader">proteins</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorpdbmodel"><span class="refoperator">pdbmodel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">pdbmodel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorpdbshow"><span class="refoperator">pdbshow</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">pdbshow</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderrunereferences"><span class="refheader">runereferences</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperator#"><span class="refoperator">&#035;</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">&#035;</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorattribset"><span class="refoperator">attribset</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">:</span> <span class="slot">arg2</span> <span class="token">:</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetmethodlist"><span class="refoperator">getmethodlist</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">listmethods</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorinitattribute"><span class="refoperator">initattribute</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;@@&#035;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatormethodcall"><span class="refoperator">methodcall</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetattribute"><span class="refoperator">setattribute</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;&#035;</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadercirrus"><span class="refheader">cirrus</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatoruiboxconstruct"><span class="refoperator">uiboxconstruct</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">ui:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderitemdisplay"><span class="refheader">itemdisplay</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorclearcolors"><span class="refoperator">clearcolors</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearcolors</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorextratexture"><span class="refoperator">extratexture</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">extratexture</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetitemcolor"><span class="refoperator">getitemcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">getitemcolor</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemchasesize"><span class="refoperator">itemchasesize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemchasesize</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemcolor"><span class="refoperator">itemcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemcolor</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemdarkcolor"><span class="refoperator">itemdarkcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemdkcolor</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemdarkflashcolor"><span class="refoperator">itemdarkflashcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemdarkflashcolor</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemflashcolor"><span class="refoperator">itemflashcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemflashcolor</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemgroupersize"><span class="refoperator">itemgroupersize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">groupersize</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemhidden"><span class="refoperator">itemhidden</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemhidden</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemid"><span class="refoperator">itemid</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemid</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemimportance"><span class="refoperator">itemimportance</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemimportance</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemmass"><span class="refoperator">itemmass</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemmass</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemsize"><span class="refoperator">itemsize</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemsize</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemtexture"><span class="refoperator">itemtexture</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemtexture</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderedgecommands"><span class="refheader">edgecommands</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorarcconstruct"><span class="refoperator">arcconstruct</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&#045;&#045;</span> <span class="slot">arg2</span> <span class="token">&#045;&gt;</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorarcness"><span class="refoperator">arcness</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">arcness</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlinkorigin"><span class="refoperator">linkorigin</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">linkorigin</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlinktarget"><span class="refoperator">linktarget</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">linktarget</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorlinktype"><span class="refoperator">linktype</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">linktype</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorpullstrength"><span class="refoperator">pullstrength</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">pullstrength</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetcurvy"><span class="refoperator">setcurvy</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">edge:curve</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetnocurvy"><span class="refoperator">setnocurvy</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">edge:nocurve</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatortieconstruct"><span class="refoperator">tieconstruct</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&#045;</span> <span class="slot">arg2</span> <span class="token">&#045;&gt;</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadernodecommands"><span class="refheader">nodecommands</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodeconstruct"><span class="refoperator">nodeconstruct</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">node:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodeexists"><span class="refoperator">nodeexists</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodeexists</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderbindings"><span class="refheader">bindings</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorclearbindings"><span class="refoperator">clearbindings</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearbindings</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodeplane"><span class="refoperator">nodeplane</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodeplane</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodesphere"><span class="refoperator">nodesphere</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodesphere</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> <span class="slot">arg4</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadercharts"><span class="refheader">charts</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcelcolor"><span class="refoperator">celcolor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">celcolor</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcelfactor"><span class="refoperator">celfactor</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">celfactor</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorceltexture"><span class="refoperator">celtexture</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">celtexture</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcelvalue"><span class="refoperator">celvalue</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">celvalue</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorchartflowness"><span class="refoperator">chartflowness</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">chartflowness</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorchartrotation"><span class="refoperator">chartrotation</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">chartrotation</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcharttotal"><span class="refoperator">charttotal</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">charttotal</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcirclechart"><span class="refoperator">circlechart</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">circlechart</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorclearcirclechart"><span class="refoperator">clearcirclechart</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearcirclechart</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadergestures"><span class="refheader">gestures</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorcleargestures"><span class="refoperator">cleargestures</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">cleargestures</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatoritemgesture"><span class="refoperator">itemgesture</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">itemgesture</span> <span class="slot">arg1</span> <span class="slot">arg2</span> <span class="slot">arg3</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderlabelling"><span class="refheader">labelling</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorclearhoverlabel"><span class="refoperator">clearhoverlabel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearhoverlabel</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorclearlabels"><span class="refoperator">clearlabels</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearlabels</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorhoverlabel"><span class="refoperator">hoverlabel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">hoverlabel</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorinserthoverlabel"><span class="refoperator">inserthoverlabel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">inserthoverlabel</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodeinfo"><span class="refoperator">nodeinfo</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodeinfo</span> <span class="slot">arg1</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatornodelabel"><span class="refoperator">nodelabel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">nodelabel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorpushhoverlabel"><span class="refoperator">pushhoverlabel</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">pushhoverlabel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderrunevalsets"><span class="refheader">runevalsets</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatoraddToRVSet"><span class="refoperator">addToRVSet</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;set:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetRVSet"><span class="refoperator">getRVSet</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">set:</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheaderselections"><span class="refheader">selections</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionAdd"><span class="refoperator">selectionAdd</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;sel:</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionAddMatching"><span class="refoperator">selectionAddMatching</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;sel~</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionAddOnCondition"><span class="refoperator">selectionAddOnCondition</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">&lt;&lt;sel</span> <span class="token">where</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionBacktrack"><span class="refoperator">selectionBacktrack</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">backtracksel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionClear"><span class="refoperator">selectionClear</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">clearsel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorselectionUse"><span class="refoperator">selectionUse</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">usesel</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+<table class="ref"><tr><td class="reftableheader"><a name="refheadervariables"><span class="refheader">variables</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="reftabledesc"></td></tr>
+<tr><td><table class="ref"><tr><td class="reftableoperator"><a name="refoperatordeclarevar"><span class="refoperator">declarevar</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">global</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorgetvar"><span class="refoperator">getvar</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="token">$</span> <span class="slot">arg1</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+<table class="ref"><tr><td class="reftableoperator"><a name="refoperatorsetvar"><span class="refoperator">setvar</span> <a href="#toctable" class = "toplink">back to top</a></td></tr>
+<tr><td class="operatorsyntaxtd"><span class="slot">arg1</span> <span class="token">=</span> <span class="slot">arg2</span> </td></tr>
+<tr><td class="reftabledesc"></td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body></html>
